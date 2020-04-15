@@ -1,6 +1,6 @@
 exports.up = function (knex) {
    return knex.schema.createTable("cars", (table) => {
-      table.string("VIN").notNullable();
+      table.string("VIN").notNullable().primary().unique();
       table.string("make").notNullable();
       table.string("model").notNullable();
       table.integer("mileage").nullable().defaultTo(0);
